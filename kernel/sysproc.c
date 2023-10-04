@@ -35,6 +35,15 @@ sys_wait(void)
   return wait(p);
 }
 
+uint64 sys_trace(void){
+  int mask;
+  argint(0, &mask); 
+
+  myproc()->mask = mask;
+
+  return 0;
+}
+
 uint64
 sys_sbrk(void)
 {
